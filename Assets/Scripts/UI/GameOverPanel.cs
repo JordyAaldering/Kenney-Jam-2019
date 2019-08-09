@@ -11,13 +11,23 @@ namespace UI
 
         private void Awake()
         {
-            gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
             _subtitleText.text = $"Level {SceneManager.GetActiveScene().buildIndex}";
         }
 
         public void Enable()
         {
-            gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void Menu()
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

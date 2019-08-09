@@ -37,7 +37,7 @@ namespace Player
         {
             if (_health <= 0f)
             {
-                GameController.GameOver();
+                FindObjectOfType<GameController>().GameOver();
             }
         }
 
@@ -80,7 +80,7 @@ namespace Player
         {
             if (other.CompareTag("Exit"))
             {
-                GameController.LevelComplete();
+                FindObjectOfType<GameController>().LevelComplete();
             }
         }
     }

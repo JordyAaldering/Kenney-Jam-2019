@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 6532216635486147126, guid: 2a0f3648d517f244c8cde2a3a8803811,
         type: 3}
       propertyPath: m_Name
-      value: Exit Button
+      value: Quit Button
       objectReference: {fileID: 0}
     - target: {fileID: 6532216635486147125, guid: 2a0f3648d517f244c8cde2a3a8803811,
         type: 3}
@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 6532216635722236144, guid: 2a0f3648d517f244c8cde2a3a8803811,
         type: 3}
       propertyPath: m_Text
-      value: Exit
+      value: Quit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0f3648d517f244c8cde2a3a8803811, type: 3}
@@ -374,6 +374,11 @@ PrefabInstance:
     - target: {fileID: 603240525760434724, guid: 4f182dc082cb472489c5685e88e020dd,
         type: 3}
       propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131814525407327882, guid: 4f182dc082cb472489c5685e88e020dd,
+        type: 3}
+      propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -454,7 +459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: GAME TITLE
+  m_Text: Give it a Shot
 --- !u!222 &840806026
 CanvasRenderer:
   m_ObjectHideFlags: 0
