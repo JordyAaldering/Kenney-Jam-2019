@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 0649
+using System.Collections;
 using UnityEngine;
 
 namespace Player
@@ -25,6 +26,8 @@ namespace Player
         [SerializeField] private float _cooldown = 5f;
         [SerializeField] private GameObject _bulletPrefab;
 
+        [SerializeField] private int _ammo;
+        
         private bool _canShoot = true;
         private Rigidbody2D _rb;
 
@@ -55,11 +58,12 @@ namespace Player
 
         public void Shoot(Vector2 direction)
         {
-            if (!_canShoot)
+            if (!_canShoot || _ammo < 1)
                 return;
 
             _canShoot = false;
-            Invoke(nameof(EnableShoot), _cooldown);
+            _ammo--;
+            StartCoroutine(EnableShoot());
 
             GameObject bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
 
@@ -71,8 +75,18 @@ namespace Player
             bullet.transform.Rotate(0f, 0f, angle);
         }
 
-        private void EnableShoot()
+        private IEnumerator EnableShoot()
         {
+            float currentCooldown = _cooldown;
+
+            while (currentCooldown > 0f)
+            {
+                currentCooldown -= Time.deltaTime;
+                // todo: set bullet sprite cooldown
+                
+                yield return null;
+            }
+            
             _canShoot = true;
         }
 
