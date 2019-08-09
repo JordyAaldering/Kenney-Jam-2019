@@ -1,5 +1,6 @@
 ﻿#pragma warning disable 0649
 using System.Collections;
+using UI;
 using UnityEngine;
 
 namespace Player
@@ -27,13 +28,27 @@ namespace Player
         [SerializeField] private GameObject _bulletPrefab;
 
         [SerializeField] private int _ammo;
+        private int Ammo
+        {
+            get => _ammo;
+            set
+            {
+                _ammo = value;
+                _ammoPanel.SetAmmo(_ammo);
+            }
+        }
         
         private bool _canShoot = true;
         private Rigidbody2D _rb;
+        private AmmoPanel _ammoPanel;
 
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            _ammoPanel = FindObjectOfType<AmmoPanel>();
+            
+            _ammoPanel.SetAmmo(_ammo);
+            _ammoPanel.SetCooldown(1f);
         }
 
         private void CheckDeath()
@@ -62,7 +77,7 @@ namespace Player
                 return;
 
             _canShoot = false;
-            _ammo--;
+            Ammo--;
             StartCoroutine(EnableShoot());
 
             GameObject bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
@@ -82,7 +97,7 @@ namespace Player
             while (currentCooldown > 0f)
             {
                 currentCooldown -= Time.deltaTime;
-                // todo: set bullet sprite cooldown
+                _ammoPanel.SetCooldown((_cooldown - currentCooldown) / _cooldown);
                 
                 yield return null;
             }
