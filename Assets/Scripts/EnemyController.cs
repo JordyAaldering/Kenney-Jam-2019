@@ -3,6 +3,17 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] private float _health = 10f;
+    public float Health
+    {
+        get => _health;
+        set
+        {
+            _health = value;
+            CheckDeath();
+        }
+    }
+    
     [SerializeField] private float _cooldown = 5f;
     [SerializeField] private float _viewDistance = 5f;
     
@@ -16,6 +27,14 @@ public class EnemyController : MonoBehaviour
     {
         _player = GameObject.FindWithTag("Player").transform;
         Invoke(nameof(EnableShoot), _cooldown);
+    }
+    
+    private void CheckDeath()
+    {
+        if (_health <= 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()

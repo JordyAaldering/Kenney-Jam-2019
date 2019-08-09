@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿#pragma warning disable 0649
+using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _damage = 10f;
     [SerializeField] private float _lifetime = 5f;
-
+    
     private GameObject _parent;
     public GameObject Parent
     {
@@ -19,6 +20,8 @@ public class Projectile : MonoBehaviour
 
     private void Awake()
     {
+        transform.parent = FindObjectOfType<Rotator>().transform;
+        
         Destroy(gameObject, _lifetime);
     }
 
@@ -27,20 +30,18 @@ public class Projectile : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = direction.normalized * _speed;
     }
     
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject otherObj = other.gameObject;
-        
-        if (otherObj == Parent)
+        if (other.gameObject == Parent)
             return;
         
-        if (otherObj.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            otherObj.GetComponent<PlayerController>().Health -= _damage;
+            other.GetComponent<PlayerController>().Health -= _damage;
         }
-        else if (otherObj.CompareTag("Enemy"))
+        else if (other.CompareTag("Enemy"))
         {
-            
+            other.GetComponent<EnemyController>().Health -= _damage;
         }
         
         Destroy(gameObject);

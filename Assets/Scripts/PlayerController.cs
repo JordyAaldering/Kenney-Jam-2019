@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
         get => _health;
         set
         {
-            _health -= value;
+            _health = value;
             CheckDeath();
         }
     }
