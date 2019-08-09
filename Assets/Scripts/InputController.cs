@@ -29,10 +29,5 @@ public class InputController : MonoBehaviour
         {
             _player.Shoot(direction);
         }
-        
-        if (Input.GetAxisRaw("Fire2") > 0f)
-        {
-            _player.Aim(direction);
-        }
     }
 }

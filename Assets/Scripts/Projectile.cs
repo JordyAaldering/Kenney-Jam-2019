@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
 
     public void Shoot(Vector2 direction)
     {
-        GetComponent<Rigidbody2D>().velocity = -direction.normalized * _speed;
+        GetComponent<Rigidbody2D>().velocity = direction.normalized * _speed;
     }
     
     private void OnCollisionEnter2D(Collision2D other)
