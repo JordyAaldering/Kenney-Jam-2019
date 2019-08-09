@@ -1,16 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Player;
+using UI;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public void LevelComplete()
+    private void Awake()
     {
-        
+        Time.timeScale = 1f;
     }
 
-    public void GameOver()
+    public static void LevelComplete()
     {
-        
+        FindObjectOfType<LevelCompletePanel>().Enable();
+        FindObjectOfType<InputController>().enabled = false;
+        Time.timeScale = 0.1f;
+    }
+
+    public static void GameOver()
+    {
+        FindObjectOfType<LevelCompletePanel>().Enable();
+        FindObjectOfType<InputController>().enabled = false;
+        Time.timeScale = 0.1f;
     }
 }

@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 0649
+using Player;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
