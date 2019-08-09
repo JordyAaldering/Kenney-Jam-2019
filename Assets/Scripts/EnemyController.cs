@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 0649
+using Extensions;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -17,7 +18,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float _cooldown = 5f;
     [SerializeField] private float _viewDistance = 5f;
     
-    [SerializeField] private LayerMask _mask = ~(1 << 9);
+    [SerializeField] private LayerMask _viewMask = ~(1 << 9);
     [SerializeField] private GameObject _bulletPrefab;
 
     private Transform _player;
@@ -47,9 +48,9 @@ public class EnemyController : MonoBehaviour
         if (!_canShoot)
             return;
         
-        Vector3 pos = transform.position;
-        Vector3 direction = (_player.position - pos).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(pos, direction, _viewDistance, _mask);
+        Vector2 pos = transform.position;
+        Vector2 direction = (_player.position.AsVector2() - pos).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(pos, direction, _viewDistance, _viewMask);
 
         if (hit && hit.collider.CompareTag("Player"))
         {

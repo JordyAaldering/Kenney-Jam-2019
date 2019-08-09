@@ -1,6 +1,7 @@
 ﻿#pragma warning disable 0649
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float _health = 100f;
@@ -14,16 +15,38 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    [SerializeField] private float _jumpForce = 10f;
+    [SerializeField] private float _jumpOffset = 0.5f;
+    [SerializeField] private LayerMask _jumpMask = ~(1 << 8);
+    
     [SerializeField] private float _cooldown = 5f;
     [SerializeField] private GameObject _bulletPrefab;
 
     private bool _canShoot = true;
-    
+    private Rigidbody2D _rb;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
     private void CheckDeath()
     {
         if (_health <= 0f)
         {
             FindObjectOfType<GameController>().GameOver();
+        }
+    }
+
+    public void Jump()
+    {
+        Vector2 pos = transform.position;
+        Vector2 direction = Vector2.down;
+        RaycastHit2D hit = Physics2D.Raycast(pos, direction, _jumpOffset, _jumpMask);
+        
+        if (hit)
+        {
+            _rb.AddForce(new Vector2(0f, _jumpForce));
         }
     }
     
