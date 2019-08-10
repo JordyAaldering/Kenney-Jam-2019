@@ -522,7 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644738118}
   m_Layer: 0
-  m_Name: Enemies Dynamic
+  m_Name: Dynamic Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,11 +788,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603240525760434724, guid: 4f182dc082cb472489c5685e88e020dd,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6170343139121690342, guid: 4f182dc082cb472489c5685e88e020dd,
         type: 3}
       propertyPath: m_IsActive
@@ -801,6 +796,11 @@ PrefabInstance:
     - target: {fileID: 570933012327354, guid: 4f182dc082cb472489c5685e88e020dd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 603240525760434724, guid: 4f182dc082cb472489c5685e88e020dd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f182dc082cb472489c5685e88e020dd, type: 3}

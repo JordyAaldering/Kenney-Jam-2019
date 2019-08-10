@@ -1,20 +1,10 @@
 ﻿#pragma warning disable 0649
+using DefaultNamespace;
 using Extensions;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Hittable
 {
-    [SerializeField] private float _health = 10f;
-    public float Health
-    {
-        get => _health;
-        set
-        {
-            _health = value;
-            CheckDeath();
-        }
-    }
-    
     [SerializeField] private float _cooldown = 5f;
     [SerializeField] private float _viewDistance = 5f;
     
@@ -30,14 +20,6 @@ public class EnemyController : MonoBehaviour
         Invoke(nameof(EnableShoot), _cooldown);
     }
     
-    private void CheckDeath()
-    {
-        if (_health <= 0f)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void Update()
     {
         Aim();
@@ -73,5 +55,10 @@ public class EnemyController : MonoBehaviour
     private void EnableShoot()
     {
         _canShoot = true;
+    }
+    
+    protected override void Die()
+    {
+        Destroy(gameObject);
     }
 }

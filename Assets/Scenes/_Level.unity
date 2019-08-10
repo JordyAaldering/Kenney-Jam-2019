@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644738118}
   m_Layer: 0
-  m_Name: Enemies Dynamic
+  m_Name: Dynamic Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

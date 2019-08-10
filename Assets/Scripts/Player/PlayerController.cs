@@ -1,26 +1,14 @@
 ﻿#pragma warning disable 0649
-using System;
 using System.Collections;
+using DefaultNamespace;
 using UI;
 using UnityEngine;
 
 namespace Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : Hittable
     {
-        [SerializeField] private float _health = 100f;
-
-        public float Health
-        {
-            get => _health;
-            set
-            {
-                _health = value;
-                CheckDeath();
-            }
-        }
-
         [SerializeField] private float _jumpForce = 10f;
         [SerializeField] private float _jumpOffset = 0.5f;
         [SerializeField] private LayerMask _jumpMask = ~(1 << 8);
@@ -50,14 +38,6 @@ namespace Player
             
             _ammoPanel.SetAmmo(_ammo);
             _ammoPanel.SetCooldown(1f);
-        }
-
-        private void CheckDeath()
-        {
-            if (_health <= 0f)
-            {
-                FindObjectOfType<GameController>().GameOver();
-            }
         }
 
         public void Jump()
@@ -101,6 +81,11 @@ namespace Player
             }
             
             _canShoot = true;
+        }
+
+        protected override void Die()
+        {
+            FindObjectOfType<GameController>().GameOver();
         }
 
         private void OnTriggerEnter2D(Collider2D other)

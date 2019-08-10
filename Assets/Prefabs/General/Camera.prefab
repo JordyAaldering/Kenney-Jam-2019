@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a0a8decc5903b469e306db9bb9f179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backgrounds:
+  _sprites:
   - {fileID: 4544235448077845365, guid: a148e5e37cae802448e08743f46251f9, type: 3}
   - {fileID: 2583609812203033409, guid: a148e5e37cae802448e08743f46251f9, type: 3}
   - {fileID: 6172491537803308644, guid: a148e5e37cae802448e08743f46251f9, type: 3}

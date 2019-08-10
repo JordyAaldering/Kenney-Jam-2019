@@ -1,5 +1,6 @@
 ﻿#pragma warning disable 0649
 using System;
+using DefaultNamespace;
 using Player;
 using UnityEngine;
 
@@ -49,14 +50,11 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject == Parent)
             return;
-        
-        if (other.CompareTag("Player"))
+
+        Hittable hit = other.GetComponent<Hittable>();
+        if (hit)
         {
-            other.GetComponent<PlayerController>().Health -= _damage;
-        }
-        else if (other.CompareTag("Enemy"))
-        {
-            other.GetComponent<EnemyController>().Health -= _damage;
+            hit.Health -= _damage;
         }
         
         Destroy(gameObject);
