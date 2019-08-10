@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7050784595837785934}
   - component: {fileID: 7050784595837785929}
-  - component: {fileID: 7050784595837785928}
+  - component: {fileID: 3290277785425970897}
   - component: {fileID: 3004606209462591702}
   - component: {fileID: 6959344949003754251}
   - component: {fileID: 8258703452945781895}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7050784595837785931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
+  m_LocalScale: {x: 0.95, y: 0.95, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7050784595837785928
+--- !u!114 &3290277785425970897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,4 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bc54f5e140daa4a8b6edb85a66701d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _destroyEffect: {fileID: 789487789733517465, guid: 9e74a52d4a2c9244d947b537c40c831b,
+    type: 3}
   _health: 10

@@ -3401,6 +3401,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7401734453246145176, guid: 81ba24c440fa97a4ba9eada3a82dc719,
+        type: 3}
+      propertyPath: _ammo
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ba24c440fa97a4ba9eada3a82dc719, type: 3}
 --- !u!1001 &6947851485050691140
@@ -3518,6 +3523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050784595837785934, guid: a8bff71556f8bb940b3aa536d55f69be,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8bff71556f8bb940b3aa536d55f69be, type: 3}

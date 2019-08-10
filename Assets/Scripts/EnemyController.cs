@@ -1,5 +1,4 @@
 ﻿#pragma warning disable 0649
-using System;
 using DefaultNamespace;
 using Extensions;
 using UnityEngine;

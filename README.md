@@ -6,3 +6,7 @@ Theme: 'Unlikely combinations'
 * [Rider](https://www.jetbrains.com/rider/)
 * [Aseprite](https://www.aseprite.org/)
 * [Krita](https://krita.org/en/)
+
+# Acknowledgements
+* [Sprites](https://www.kenney.nl/)
+* [Puzzle Tune](https://opengameart.org/content/puzzle-tune-1)

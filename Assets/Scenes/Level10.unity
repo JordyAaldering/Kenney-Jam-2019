@@ -3145,7 +3145,12 @@ PrefabInstance:
     - target: {fileID: 7401734453246145176, guid: 81ba24c440fa97a4ba9eada3a82dc719,
         type: 3}
       propertyPath: _ammo
-      value: 3
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401734453246145176, guid: 81ba24c440fa97a4ba9eada3a82dc719,
+        type: 3}
+      propertyPath: _cooldown
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ba24c440fa97a4ba9eada3a82dc719, type: 3}

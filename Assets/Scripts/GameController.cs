@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
         _isDone = true;
         FindObjectOfType<LevelCompletePanel>().Enable();
         FindObjectOfType<InputController>().enabled = false;
-        Time.timeScale = 0f;
+        Time.timeScale = 0.25f;
     }
 
     public void GameOver()
@@ -30,6 +30,6 @@ public class GameController : MonoBehaviour
         _isDone = true;
         FindObjectOfType<GameOverPanel>().Enable();
         FindObjectOfType<InputController>().enabled = false;
-        Time.timeScale = 0f;
+        Time.timeScale = 0.25f;
     }
 }

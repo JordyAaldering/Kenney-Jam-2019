@@ -98,8 +98,10 @@ namespace Player
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Enemy"))
+            GameObject otherObj = other.gameObject;
+            if (otherObj.CompareTag("Enemy"))
             {
+                otherObj.GetComponent<Hittable>().Die();
                 FindObjectOfType<GameController>().GameOver();
             }
         }
