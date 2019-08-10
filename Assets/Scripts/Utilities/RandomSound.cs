@@ -1,5 +1,6 @@
 ﻿#pragma warning disable 0649
 using Extensions;
+using UI;
 using UnityEngine;
 
 namespace Utilities
@@ -8,16 +9,9 @@ namespace Utilities
     {
         [SerializeField] private AudioClip[] _sounds;
 
-        private AudioSource _source;
-        
-        private void Awake()
-        {
-            _source = FindObjectOfType<AudioSource>();
-        }
-
         public void Play()
         {
-            _source.PlayOneShot(_sounds.GetRandom());
+            AudioController.instance.Play(_sounds.GetRandom());
         }
     }
 }
