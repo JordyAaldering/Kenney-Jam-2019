@@ -136,8 +136,8 @@ MonoBehaviour:
   _health: 10
   _cooldown: 5
   _viewDistance: 5
-  _mask:
+  _viewMask:
     serializedVersion: 2
     m_Bits: 4294966783
-  _bulletPrefab: {fileID: 7055116210000132626, guid: 910287fc1b06bcb4d9c18c88a1a19604,
+  _bulletPrefab: {fileID: 5179695613722129238, guid: 2cc6a88c49dd3fe43ae90453ac35e0ea,
     type: 3}

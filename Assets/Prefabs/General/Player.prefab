@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a3fca029fefa64097022483e70e40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 10
   _jumpForce: 20
   _jumpOffset: 0.5
   _jumpMask:
@@ -156,3 +156,4 @@ MonoBehaviour:
   _cooldown: 3
   _bulletPrefab: {fileID: 7055116210000132626, guid: 910287fc1b06bcb4d9c18c88a1a19604,
     type: 3}
+  _ammo: 0

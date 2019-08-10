@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 0649
+using System;
 using Player;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private bool _initialized;
+
     private void Awake()
     {
         transform.parent = FindObjectOfType<Rotator>().transform;
@@ -26,11 +29,22 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, _lifetime);
     }
 
-    public void Shoot(Vector2 direction)
+    public void Initialize(Vector2 direction)
     {
-        GetComponent<Rigidbody2D>().velocity = direction.normalized * _speed;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.Rotate(0f, 0f, angle);
+        _initialized = true;
     }
-    
+
+    private void FixedUpdate()
+    {
+        if (!_initialized)
+            return;
+
+        Transform t = transform;
+        t.position += _speed * Time.fixedDeltaTime * t.right;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == Parent)

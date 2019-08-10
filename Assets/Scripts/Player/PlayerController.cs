@@ -82,13 +82,10 @@ namespace Player
             StartCoroutine(EnableShoot());
 
             GameObject bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
-
             Projectile projectile = bullet.GetComponent<Projectile>();
+            
             projectile.Parent = gameObject;
-            projectile.Shoot(direction);
-
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            bullet.transform.Rotate(0f, 0f, angle);
+            projectile.Initialize(direction);
         }
 
         private IEnumerator EnableShoot()
