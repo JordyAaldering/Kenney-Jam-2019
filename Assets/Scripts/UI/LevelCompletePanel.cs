@@ -19,12 +19,15 @@ namespace UI
         public void Enable()
         {
             transform.GetChild(0).gameObject.SetActive(true);
-            _continueButton.SetActive(SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCount);
+            _continueButton.SetActive(
+                SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1);
         }
 
         public void Continue()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("BestLevel", currentIndex);
+            SceneManager.LoadScene(currentIndex + 1);
         }
 
         public void Menu()

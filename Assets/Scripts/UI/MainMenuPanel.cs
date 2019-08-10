@@ -10,6 +10,12 @@ namespace UI
             SceneManager.LoadScene(1);
         }
 
+        public void ContinueGame()
+        {
+            int bestLevel = PlayerPrefs.GetInt("BestLevel", 1);
+            SceneManager.LoadScene(bestLevel);
+        }
+
         public void Quit()
         {
             Application.Quit();

@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e646f3670ed040099f492467f50d56e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifetime: 5
+  _lifetime: 7
 --- !u!1001 &1096493835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e646f3670ed040099f492467f50d56e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifetime: 5
+  _lifetime: 6
 --- !u!1 &1644738117
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,11 +599,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 754538897682805569, guid: 419834de3e836db408c76bfa4f197d29,
-        type: 3}
-      propertyPath: _ammo
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 419834de3e836db408c76bfa4f197d29, type: 3}
