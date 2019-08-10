@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 8848282472422159394
     second: tanks_bullet
+  - first:
+      213: -5566093442506683350
+    second: tanks_bomb_1
+  - first:
+      213: 1341822843467597447
+    second: tanks_bomb_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -109,7 +115,7 @@ TextureImporter:
         width: 25
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,6 +123,48 @@ TextureImporter:
       bones: []
       spriteID: df18831a7f1204542834d9d4e6395103
       internalID: 8848282472422159394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks_bomb_1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 331
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65177e6606c0e6549bdfaad728f93266
+      internalID: -5566093442506683350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tanks_bomb_2
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 39
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7898c6345e385194ebc21501c30b795a
+      internalID: 1341822843467597447
       vertices: []
       indices: 
       edges: []

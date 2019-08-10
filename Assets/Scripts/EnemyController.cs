@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 0649
+using System;
 using DefaultNamespace;
 using Extensions;
 using UnityEngine;
@@ -56,9 +57,18 @@ public class EnemyController : Hittable
     {
         _canShoot = true;
     }
-    
-    protected override void Die()
+
+    public override void Die()
     {
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<Hittable>().Die();
+            Die();
+        }
     }
 }

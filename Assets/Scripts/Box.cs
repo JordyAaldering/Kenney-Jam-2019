@@ -2,7 +2,7 @@
 
 public class Box : Hittable
 {
-    protected override void Die()
+    public override void Die()
     {
         Destroy(gameObject);
     }

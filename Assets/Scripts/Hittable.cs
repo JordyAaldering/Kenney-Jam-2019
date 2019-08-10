@@ -23,6 +23,6 @@ namespace DefaultNamespace
             }
         }
 
-        protected abstract void Die();
+        public abstract void Die();
     }
 }

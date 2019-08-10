@@ -83,7 +83,7 @@ namespace Player
             _canShoot = true;
         }
 
-        protected override void Die()
+        public override void Die()
         {
             FindObjectOfType<GameController>().GameOver();
         }

@@ -5,7 +5,7 @@ namespace Player
 {
     public class InputController : MonoBehaviour
     {
-        [SerializeField] private bool _canJump;
+        [SerializeField] private bool _canJump = false;
         
         private PlayerController _player;
         private PausePanel _pause;
