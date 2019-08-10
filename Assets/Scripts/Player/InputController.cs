@@ -1,28 +1,34 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 
 namespace Player
 {
     public class InputController : MonoBehaviour
     {
+        [SerializeField] private bool _canJump;
+        
         private PlayerController _player;
+        private PausePanel _pause;
         private Rotator _rotator;
         private Camera _cam;
 
         private void Awake()
         {
             _player = FindObjectOfType<PlayerController>();
+            _pause = FindObjectOfType<PausePanel>();
             _rotator = FindObjectOfType<Rotator>();
             _cam = Camera.main;
         }
 
         private void Update()
         {
-            UpdateRotate();
-            UpdateJump();
-            UpdateShoot();
+            Rotate();
+            Jump();
+            Shoot();
+            Pause();
         }
 
-        private void UpdateRotate()
+        private void Rotate()
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             if (Mathf.Abs(horizontal) > 0f)
@@ -31,15 +37,15 @@ namespace Player
             }
         }
 
-        private void UpdateJump()
+        private void Jump()
         {
-            if (Input.GetAxisRaw("Jump") > 0f)
+            if (_canJump && Input.GetKeyDown(KeyCode.Space))
             {
                 _player.Jump();
             }
         }
 
-        private void UpdateShoot()
+        private void Shoot()
         {
             Vector2 pos = transform.position;
             Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
@@ -48,6 +54,14 @@ namespace Player
             if (Input.GetAxisRaw("Fire1") > 0f)
             {
                 _player.Shoot(direction);
+            }
+        }
+
+        private void Pause()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                _pause.Toggle();
             }
         }
     }
