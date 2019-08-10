@@ -1,4 +1,5 @@
 ﻿#pragma warning disable 0649
+using System;
 using System.Collections;
 using UI;
 using UnityEngine;
@@ -110,6 +111,14 @@ namespace Player
             if (other.CompareTag("Exit"))
             {
                 FindObjectOfType<GameController>().LevelComplete();
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                FindObjectOfType<GameController>().GameOver();
             }
         }
     }
