@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7055116210000132636}
   - component: {fileID: 7055116210000132637}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,3 +147,6 @@ MonoBehaviour:
   _speed: 5
   _damage: 10
   _lifetime: 5
+  _destroyEffect: {fileID: 4540983596517274525, guid: c10bd764c1e13d44ca3bd05ffda0e4b6,
+    type: 3}
+  _destroyClip: {fileID: 8300000, guid: 83e8062c3e2aacd4f95f708e01471a9c, type: 3}

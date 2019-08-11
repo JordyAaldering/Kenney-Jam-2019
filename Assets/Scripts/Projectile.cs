@@ -1,6 +1,7 @@
 ﻿#pragma warning disable 0649
 using DefaultNamespace;
 using Player;
+using UI;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -10,6 +11,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float _lifetime = 5f;
 
     [SerializeField] private GameObject _destroyEffect;
+    [SerializeField] private AudioClip _destroyClip;
     
     private GameObject _parent;
     public GameObject Parent
@@ -60,6 +62,8 @@ public class Projectile : MonoBehaviour
         
         GameObject obj = Instantiate(_destroyEffect, transform.position, Quaternion.identity);
         obj.transform.parent = transform.parent;
+        
+        AudioController.instance.Play(_destroyClip);
         
         Destroy(gameObject);
     }

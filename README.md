@@ -17,4 +17,5 @@ Theme: 'Unlikely combinations'
 * [Fonts](https://www.kenney.nl/assets/kenney-fonts)
 
 # Acknowledgements
+* [Hit](https://opengameart.org/content/hit-sounds)
 * [Music](https://opengameart.org/content/puzzle-tune-1)
