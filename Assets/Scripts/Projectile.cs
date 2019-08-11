@@ -1,5 +1,4 @@
 ﻿#pragma warning disable 0649
-using System;
 using DefaultNamespace;
 using Player;
 using UnityEngine;
@@ -9,6 +8,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _damage = 10f;
     [SerializeField] private float _lifetime = 5f;
+
+    [SerializeField] private GameObject _destroyEffect;
     
     private GameObject _parent;
     public GameObject Parent
@@ -56,6 +57,9 @@ public class Projectile : MonoBehaviour
         {
             hit.Health -= _damage;
         }
+        
+        GameObject obj = Instantiate(_destroyEffect, transform.position, Quaternion.identity);
+        obj.transform.parent = transform.parent;
         
         Destroy(gameObject);
     }
