@@ -19,8 +19,6 @@ namespace UI
         public void Enable()
         {
             transform.GetChild(0).gameObject.SetActive(true);
-            _continueButton.SetActive(
-                SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1);
         }
 
         public void Continue()
