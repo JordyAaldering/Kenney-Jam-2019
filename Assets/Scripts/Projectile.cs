@@ -63,7 +63,7 @@ public class Projectile : MonoBehaviour
         GameObject obj = Instantiate(_destroyEffect, transform.position, Quaternion.identity);
         obj.transform.parent = transform.parent;
         
-        AudioController.instance.Play(_destroyClip);
+        AudioController.instance.Play(_destroyClip, 0.5f);
         
         Destroy(gameObject);
     }

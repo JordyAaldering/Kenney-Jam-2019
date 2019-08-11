@@ -29,9 +29,10 @@ namespace UI
         [SerializeField] private Sprite _offSprite;
         private bool _mute;
 
-        public void Play(AudioClip clip)
+        public void Play(AudioClip clip, float volume = 1f)
         {
             _sfxSource.pitch = Random.Range(0.95f, 1.05f);
+            _sfxSource.volume = volume;
             _sfxSource.PlayOneShot(clip);
         }
 
