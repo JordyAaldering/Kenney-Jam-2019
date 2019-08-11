@@ -4967,8 +4967,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2653562124353564148}
+  - component: {fileID: -1710791345353298304}
   m_Layer: 0
-  m_Name: Explosion Destroy Effect
+  m_Name: Box Destroy Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4990,3 +4991,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1710791345353298304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959763345458991804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e4ebdb9dc497e4cb05950038236017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifetime: 5

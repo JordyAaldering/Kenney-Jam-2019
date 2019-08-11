@@ -88,6 +88,7 @@ namespace Player
             GameObject obj = Instantiate(_destroyEffect, transform.position, Quaternion.identity);
             obj.transform.parent = transform.parent;
             
+            GetComponent<SpriteRenderer>().enabled = false;
             FindObjectOfType<GameController>().GameOver();
         }
 
