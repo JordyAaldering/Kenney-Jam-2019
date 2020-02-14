@@ -1,5 +1,5 @@
 # Kenney Jam 2019
-Theme: 'Unlikely combinations'
+Theme: 'Unlikely Combinations'
 
 # Built With
 * [Unity](https://unity.com/)
